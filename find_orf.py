@@ -208,7 +208,10 @@ def find_first_orf(sequence,
     # frame.
     # Read the docstring above for additional clues.
     # orf_pattern_str = r'AUG'+r'([AUCG]{3})*('+r'UAG|UAA|UGA'+r')'
-      orf_pattern_str = r'^[C]*'+ r'^[AUG]*'+ r'[UAA|UAG|UGA]$'    
+    # orf_pattern_str = r'^[C]*'+ r'^[AUG]*'+ r'[UAA|UAG|UGA]$'    
+    start = "|".join(start_codons)
+    stop = "|".join(stop_codons)
+    orf_pattern_str = '(?:'+start+')(?:[AUGC]{3})*(?:'+stop+')'
 ##########################################################################
 
     # Create the regular expression object
