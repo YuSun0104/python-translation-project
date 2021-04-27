@@ -47,6 +47,10 @@ Parameters
                 break
     
     return translate
+<<<<<<< HEAD
+=======
+     
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def get_all_translations(rna_sequence, genetic_code):
     """Get a list of all amino acid sequences encoded by an RNA sequence.
@@ -63,6 +67,7 @@ def get_all_translations(rna_sequence, genetic_code):
     If no amino acids can be translated from `rna_sequence`, an empty list is
     returned.
     """
+<<<<<<< HEAD
     rna_sequence = rna_sequence.upper()
     number_of_bases = len(rna_sequence)
     last_codon_index = number_of_bases - 3
@@ -78,6 +83,9 @@ def get_all_translations(rna_sequence, genetic_code):
             if aa_seq:
                 amino_acid_seq_list.append(aa_seq)
     return amino_acid_seq_list
+=======
+    
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def get_reverse(sequence):
     """Reverse orientation of `sequence`.
@@ -92,6 +100,10 @@ def get_reverse(sequence):
         return rev_seq
     else:
         return ''
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def get_complement(sequence):
     """Get the complement of `sequence`.
@@ -107,6 +119,10 @@ def get_complement(sequence):
         return ''.join(seq)
     else:
         return ''
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def reverse_and_complement(sequence):
     """Get the reversed and complemented form of `sequence`.
@@ -122,13 +138,63 @@ def reverse_and_complement(sequence):
         return rc_seq
     else:
         return''
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def get_longest_peptide(rna_sequence, genetic_code):
 
+<<<<<<< HEAD
+=======
+    Explore six reading frames of `rna_sequence` (the three reading frames of
+    `rna_sequence`, and the three reading frames of the reverse and complement
+    of `rna_sequence`) and return (as a string) the longest sequence of amino
+    acids that it encodes, according to the `genetic_code`.
+
+    If no amino acids can be translated from `rna_sequence` nor its reverse and
+    complement, an empty string is returned.
+    """
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
     rna_sequence = rna_sequence.upper()
     start_pos = 0
     longest = ""
     amino_acids = []
+<<<<<<< HEAD
+=======
+
+    def translate(start_pos, rna_sequence, genetic_code):
+        proteins = ""
+        for i in range(start_pos, len(rna_sequence), 3):
+            codon = rna_sequence[i:i + 3]
+            if codon in ["UAG", "UAA", "UGA"] or len(codon) != 3:
+                break
+            else:
+                proteins += genetic_code[codon]
+        return proteins
+    
+    def valid_seqs(start_pos, rna_sequence, genetic_code, amino_acids):
+        while start_pos < len(rna_sequence):
+            start_codon = rna_sequence[start_pos:start_pos + 3]
+            if start_codon == "AUG":
+                translation = translate(start_pos, rna_sequence, genetic_code)
+                amino_acids.append(translation)
+            start_pos += 1
+        return amino_acids
+
+    fin = reverse_and_complement(rna_sequence)
+    amino_acids = valid_seqs(start_pos, rna_sequence, genetic_code, amino_acids)
+    amino_acids = valid_seqs(start_pos, fin, genetic_code, amino_acids)
+
+    max_len = -1
+    for seq in amino_acids:
+        if len(seq) > max_len:
+            max_length = len(seq)
+            longest = seq
+    return longest
+
+
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
     def translate(start_pos, rna_sequence, genetic_code):
         proteins = ""

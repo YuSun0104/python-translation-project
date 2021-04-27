@@ -212,7 +212,11 @@ def find_first_orf(sequence,
     start = "|".join(start_codons)
     stop = "|".join(stop_codons)
     orf_pattern_str = '(?:'+start+')(?:[AUGC]{3})*(?:'+stop+')'
+<<<<<<< HEAD
     ##########################################################################
+=======
+##########################################################################
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
     # Create the regular expression object
     orf_pattern = re.compile(orf_pattern_str)
