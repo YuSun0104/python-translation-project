@@ -12,7 +12,7 @@ def translate_sequence(rna_sequence, genetic_code):
 
     If `rna_sequence` is less than 3 bases long, or starts with a stop codon,
     an empty string is returned.
-    Parameters
+Parameters
     ----------
     rna_sequence : str
         A string representing an RNA sequence (upper or lower-case).
@@ -47,6 +47,10 @@ def translate_sequence(rna_sequence, genetic_code):
                 break
     
     return translate
+<<<<<<< HEAD
+=======
+     
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def get_all_translations(rna_sequence, genetic_code):
     """Get a list of all amino acid sequences encoded by an RNA sequence.
@@ -63,6 +67,7 @@ def get_all_translations(rna_sequence, genetic_code):
     If no amino acids can be translated from `rna_sequence`, an empty list is
     returned.
     """
+<<<<<<< HEAD
     rna_sequence = rna_sequence.upper()
     number_of_bases = len(rna_sequence)
     last_codon_index = number_of_bases - 3
@@ -78,7 +83,9 @@ def get_all_translations(rna_sequence, genetic_code):
             if aa_seq:
                 amino_acid_seq_list.append(aa_seq)
     return amino_acid_seq_list
+=======
     
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def get_reverse(sequence):
     """Reverse orientation of `sequence`.
@@ -93,7 +100,10 @@ def get_reverse(sequence):
         return rev_seq
     else:
         return ''
+<<<<<<< HEAD
+=======
     
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def get_complement(sequence):
     """Get the complement of `sequence`.
@@ -109,7 +119,11 @@ def get_complement(sequence):
         return ''.join(seq)
     else:
         return ''
+<<<<<<< HEAD
+=======
     
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
+
 def reverse_and_complement(sequence):
     """Get the reversed and complemented form of `sequence`.
 
@@ -124,9 +138,15 @@ def reverse_and_complement(sequence):
         return rc_seq
     else:
         return''
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
 def get_longest_peptide(rna_sequence, genetic_code):
-    """
+
+<<<<<<< HEAD
+=======
     Explore six reading frames of `rna_sequence` (the three reading frames of
     `rna_sequence`, and the three reading frames of the reverse and complement
     of `rna_sequence`) and return (as a string) the longest sequence of amino
@@ -135,10 +155,13 @@ def get_longest_peptide(rna_sequence, genetic_code):
     If no amino acids can be translated from `rna_sequence` nor its reverse and
     complement, an empty string is returned.
     """
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
     rna_sequence = rna_sequence.upper()
     start_pos = 0
     longest = ""
     amino_acids = []
+<<<<<<< HEAD
+=======
 
     def translate(start_pos, rna_sequence, genetic_code):
         proteins = ""
@@ -171,6 +194,7 @@ def get_longest_peptide(rna_sequence, genetic_code):
     return longest
 
 
+>>>>>>> 1e9600671fad4e3d4fd6fb69a0b3b543d42f1291
 
     def translate(start_pos, rna_sequence, genetic_code):
         proteins = ""
